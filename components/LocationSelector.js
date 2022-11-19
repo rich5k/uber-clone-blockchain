@@ -41,10 +41,26 @@ const LocationSelector = () => {
             onChange={e => setPickup(e.target.value)}
             onFocus={()=> setInFocus('from')}/>
         </div>
+        <div className={style.verticalLine}/>
         <div className={`${style.inputBox} ${
             inFocus === 'to' && style.focusedInputBox
           }`}
-        ></div>
+        >
+          <svg viewBox='0 0 24 24' width='1em' height='1em'>
+              <path
+                fillRule='evenodd'
+                clipRule='evenodd'
+                d='M14 10h-4v4h4v-4zM7 7v10h10V7H7z'
+              />
+            </svg>
+        </div>
+       <input 
+          className={style.input}
+          placeholder='Where to?'
+          value = {dropoff}
+          onChange= {e=> setDropoff(e.target.value)}
+          onFocus = {()=> setInFocus('to')}
+       /> 
     </div>
   )
 }
